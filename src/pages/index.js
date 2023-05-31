@@ -1,14 +1,35 @@
-import SpecForm from "@/components/SpecForm";
+import Header from "@/components/ui/Header";
+import FXOPorts from "@/components/questions/FXOPorts";
+import IpLines from "@/components/questions/IPLines";
+import NavQuestions from "@/components/ui/NavQuestions";
+import { useState } from "react";
 
 export default function Home() {
+
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+
+  const[ipLines, setIpLines] = useState("")
+  const[fxoPorts, setFxoPorts] = useState("")
+  const[concurrentCalls, setConcurrentCalls] = useState("")
+  const[callRecording, setCallRecording] = useState("")
+  const[callCenter, setCallCenter] = useState("")
+  const[callCenterAgents, setCallCenterAgents] = useState("")
+  const[acd, setAcd] = useState("")
+  
+  console.log("IP Lines from Index: " + ipLines);
+
+  const questions = [
+    { id:0, question: "How many IP lines do you need?", component: <IpLines ipLines={ipLines} setIpLines={setIpLines}/> },
+    { id:1, question: "How many FXO ports do you need?", component: <FXOPorts fxoPorts={fxoPorts} setFxoPorts={setFxoPorts}/> },
+  ]
+
   return (
     <>
-      <div className="flex flex-row max-w-5xl mx-auto items-center">
-        <img src="/epygi_wave.png" className="max-w-[100px] md:max-w-[150px]"></img> 
-        <h1 className="text-3xl ml-5">What epygi product do I need?</h1>
-        
-      </div>
-      <SpecForm></SpecForm>
+      <Header/>
+      
+      {questions[currentQuestionIndex].component}
+      <NavQuestions currentQuestionIndex={currentQuestionIndex} setCurrentQuestionIndex={setCurrentQuestionIndex}/>
+      
     </>
   );
 }
