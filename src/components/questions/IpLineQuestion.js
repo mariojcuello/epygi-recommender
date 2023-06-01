@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import QuestionText from "../ui/QuestionText";
 
 const IPLines = (props) => {
   const [inputError, setInputError] = useState(false);
@@ -25,9 +26,7 @@ const IPLines = (props) => {
 
   return (
    <div className="max-w-2xl mx-auto">
-      <label className="block text-lg text-gray-900 dark:text-white mb-5">
-        Please enter the maximum amount of IP lines the unit will need.
-      </label>
+      <QuestionText question={"How many IP lines will be needed?"}/>
       <input
         type="text"
         id="ipLines"

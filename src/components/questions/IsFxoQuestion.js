@@ -14,7 +14,7 @@ const IsFxoQuestion = (props) => {
   };
 
   return (
-    <div className="max-w-2xl mx-auto ">
+    <div className="max-w-2xl mx-auto">
       <QuestionText question={"Does the unit need FXO ports?"} />
       <div className="flex flex-row gap-20 place-content-center">
         <QuestionButton
