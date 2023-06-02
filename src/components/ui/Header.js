@@ -1,11 +1,16 @@
 const Header = () => {
+
   return (
     <div className="flex flex-row mx-auto items-center ">
       <img
-        src="/epygi_wave.png"
-        className="max-w-[100px] md:max-w-[150px] ml-5"
+        src="/logo_dark.png"
+        className="max-w-[200px] md:max-w-[300px] pl-10 pt-5 hidden dark:flex"
       ></img>
-      <h1 className="text-3xl ml-5">Epygi Product Match</h1>
+
+      <img
+        src="/logo_light.png"
+        className="max-w-[200px] md:max-w-[300px] pl-10 pt-5 dark:hidden"
+      ></img>
     </div>
   );
 };
