@@ -17,7 +17,7 @@ const IsAcdQ = (props) => {
 
   return (
     <div className="max-w-2xl mx-auto">
-      <QuestionText question={"Do you need call center functionality?"} />
+      <QuestionText question={"Do you need automatic call distribution?"} />
       <div className="flex flex-row gap-20 place-content-center">
         <QuestionButton
           onClick={handleYesClick}

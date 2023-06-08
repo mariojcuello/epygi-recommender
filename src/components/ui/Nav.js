@@ -1,6 +1,8 @@
 
 const Nav = (props) => {
 
+  const totalNumberOfQuestions = 7;
+
   const handleNext = () => {
     if (props.skipNextQuestion) {
       props.setCurrentQuestionIndex(props.currentQuestionIndex + 2);
@@ -21,21 +23,19 @@ const Nav = (props) => {
   };
 
   return (
-    <div className="grid grid-cols-2 max-w-2xl mx-auto place-content-center gap-10 mt-10">
+    <div className="grid grid-cols-2 max-w-2xl mx-auto place-content-center gap-10 mt-10 px-5">
       {props.currentQuestionIndex > 0 && (
         <button
-        type="button"
-        onClick={handlePrevious}
-        disabled={props.currentQuestionIndex === 0}
-        className="bg-blue-500 text-white rounded-lg text-xl py-2 px-4 mt-4"
-      >
-        Previous
-      </button>
+          type="button"
+          onClick={handlePrevious}
+          disabled={props.currentQuestionIndex === 0}
+          className="bg-blue-500 text-white rounded-lg text-xl py-2 px-4 mt-4"
+        >
+          Previous
+        </button>
       )}
       {props.currentQuestionIndex === 0 && <div />}
-
-      {props.isValidInput && (
-        // <NavButton onClick={handleNext} currentQuestionIndex={props.currentQuestionIndex} text="Next" />
+      {props.currentQuestionIndex < totalNumberOfQuestions && (
         <button
           type="button"
           onClick={handleNext}
@@ -44,7 +44,15 @@ const Nav = (props) => {
           Next
         </button>
       )}
-
+      {props.currentQuestionIndex === totalNumberOfQuestions && (
+        <button
+          type="button"
+          onClick={handleNext}
+          className="bg-blue-500 text-white rounded-lg text-xl py-2 px-4 mt-4"
+        >
+          See Results
+        </button>
+      )}
     </div>
   );
 };

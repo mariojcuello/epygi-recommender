@@ -34,7 +34,7 @@ const ConcurrentCallsQ = (props) => {
         onChange={handleChange}
         className={`bg-gray-50 border ${
           inputError ? "border-red-500" : "border-gray-300"
-        } max-w-xs text-center mx-auto text-gray-900 text-3xl rounded-lg text focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500`}
+        } max-w-xs text-center mx-auto text-gray-900 text-lg md:text-3xl rounded-lg text focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500`}
         placeholder="Enter an amount"
         required
       />

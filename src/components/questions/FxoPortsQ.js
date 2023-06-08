@@ -22,7 +22,7 @@ const FxoPortsQ = (props) => {
   return (
     <div className="max-w-2xl mx-auto">
       <QuestionText question={"How many FXO ports are needed?"} />
-      <div className="flex flex-row gap-20 place-content-center">
+      <div className="flex flex-row gap-10 md:gap-20 place-content-center">
         <QuestionButton
           onClick={handleZeroClick}
           buttonText={"0"}
