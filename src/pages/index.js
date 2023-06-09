@@ -12,6 +12,7 @@ import IsAcdQ from "@/components/questions/IsAcdQ";
 
 import Nav from "@/components/ui/Nav";
 import { useState } from "react";
+import Reset from "@/components/ui/Reset";
 
 export default function Home() {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -132,6 +133,18 @@ export default function Home() {
         setIsValidInput={setIsValidInput}
         skipNextQuestion={skipNextQuestion}
         setSkipNextQuestion={setSkipNextQuestion}
+      />
+      <Reset 
+      currentQuestionIndex={currentQuestionIndex}
+      setCurrentQuestionIndex={setCurrentQuestionIndex}
+      setIpLines={setIpLines}
+      setCallCenterAgents={setCallCenterAgents}
+      setCallRecording={setCallRecording}
+      setConcurrentCalls={setConcurrentCalls}
+      setFxoPorts={setFxoPorts}
+      setFxsPorts={setFxsPorts}
+      setIsAcd={setIsAcd}
+      setIsCallCenter={setIsCallCenter}
       />
     </>
   );
