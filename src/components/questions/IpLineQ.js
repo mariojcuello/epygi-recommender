@@ -7,17 +7,20 @@ const IpLinesQ = (props) => {
   const handleChange = (e) => {
     const inputValue = e.target.value;
     const numericValue = parseInt(inputValue);
-    if (!isNaN(numericValue && inputValue !== "")) {
+    if (inputValue === "") {
+      setInputError(true);
+      props.setIpLines("");
+      props.setIsValidInput(false);
+    } else if (!isNaN(numericValue)) {
       setInputError(false);
       props.setIpLines(numericValue.toString());
       props.setIsValidInput(true);
+    } else {
+      setInputError(true);
+      props.setIpLines("");
+      props.setIsValidInput(false);
     }
-      else {
-        setInputError(true);
-        props.setIpLines("");
-        props.setIsValidInput(false);
-      }
-    };
+  };
 
 
   useEffect(() => {

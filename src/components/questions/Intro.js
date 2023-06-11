@@ -5,7 +5,7 @@ const Intro = ({ currentQuestionIndex, setCurrentQuestionIndex }) => {
   return (
     <QuestionWrapper>
       <div className="text-center mx-auto text-2xl md:text-4xl flex">
-        Welcome to the Epygi Product Selector
+        Welcome to the Epygi Product Reccomender Tool
       </div>
     </QuestionWrapper>
   );

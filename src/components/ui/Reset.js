@@ -29,7 +29,7 @@ const Reset = ({
           <button
             type="button"
             onClick={handleReset}
-            className="bg-red-400 text-white rounded-lg text-xl py-2 px-4 mt-7 flex mx-auto"
+            className="bg-blue-500 text-white rounded-lg text-xl py-2 px-4 mt-7 flex mx-auto"
           >
             Start Over
           </button>

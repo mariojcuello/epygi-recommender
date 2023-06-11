@@ -1,5 +1,5 @@
 const Nav = (props) => {
-  const totalNumberOfQuestions = 7;
+  const totalNumberOfQuestions = 8;
 
   const handleNext = () => {
     if (props.skipNextQuestion) {
@@ -7,10 +7,23 @@ const Nav = (props) => {
       props.setSkipNextQuestion(false);
       console.log("skipped to question " + props.currentQuestionIndex);
     }
+  
+    // Skip input validation for the intro question
+    if (props.currentQuestionIndex === 0) {
+      props.setCurrentQuestionIndex(props.currentQuestionIndex + 1);
+      console.log("next question " + props.currentQuestionIndex);
+      return;
+    }
+  
+    // Check if the input is invalid
+    if (!props.isValidInput) {
+      return;
+    }
+  
     props.setCurrentQuestionIndex(props.currentQuestionIndex + 1);
-    props.setIsValidInput(false);
     console.log("next question " + props.currentQuestionIndex);
   };
+  
 
   const handlePrevious = () => {
     if (props.currentQuestionIndex > 0) {
