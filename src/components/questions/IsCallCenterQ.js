@@ -3,11 +3,10 @@ import React, { useEffect } from "react";
 import QuestionButton from "@/components/ui/QuestionButton";
 import QuestionText from "../ui/QuestionText";
 
-const IsCallCenterQ = ({isCallCenter, setIsCallCenter, setIsValidInput}) => {
+const IsCallCenterQ = ({isCallCenter, setIsCallCenter, setIsValidInput, setSkipNextQuestion}) => {
 
   const checkInput = () => {
     if (isCallCenter === true || isCallCenter === false) {
-      console.log("fxsPorts is not empty")
       setIsValidInput(true);
     }
   }

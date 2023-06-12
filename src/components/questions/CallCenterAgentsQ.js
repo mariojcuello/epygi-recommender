@@ -1,7 +1,18 @@
 import { useState, useEffect } from "react";
 import QuestionText from "../ui/QuestionText";
 
-const CallCenterAgentsQ = (props) => {
+const CallCenterAgentsQ = ({callCenterAgents, setCallCenterAgents, setIsValidInput}) => {
+  
+  const checkInput = () => {
+    if (callCenterAgents !== "") {
+      setIsValidInput(true);
+    }
+  }
+
+  useEffect(() => {
+    checkInput();
+  }, [callCenterAgents]);
+  
   const [inputError, setInputError] = useState(false);
 
   const handleChange = (e) => {
@@ -9,23 +20,18 @@ const CallCenterAgentsQ = (props) => {
     const numericValue = parseInt(inputValue);
     if (inputValue === "") {
       setInputError(true);
-      props.setCallCenterAgents("");
-      props.setIsValidInput(false);
+      setCallCenterAgents("");
+      setIsValidInput(false);
     } else if (!isNaN(numericValue)) {
       setInputError(false);
-      props.setCallCenterAgents(numericValue.toString());
-      props.setIsValidInput(true);
+      setCallCenterAgents(numericValue.toString());
+      setIsValidInput(true);
     } else {
       setInputError(true);
-      props.setCallCenterAgents("");
-      props.setIsValidInput(false);
+      setCallCenterAgents("");
+      setIsValidInput(false);
     }
   };
-
-
-  useEffect(() => {
-    console.log("IP Lines: " + props.ipLines);
-  }, [props.ipLines]);
 
   return (
    <div className="max-w-2xl mx-auto">
@@ -33,7 +39,7 @@ const CallCenterAgentsQ = (props) => {
       <input
         type="text"
         id="ipLines"
-        value={props.callCenterAgents}
+        value={callCenterAgents}
         onChange={handleChange}
         className={`bg-gray-50 border ${
           inputError ? "border-red-500" : "border-gray-300"

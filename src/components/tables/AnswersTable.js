@@ -7,8 +7,9 @@ const AnswersTable = ({ ipLines, fxsPorts, fxoPorts, callCenterAgents, concurren
     { label: "FXO Ports", value: fxoPorts },
     { label: "Concurrent Calls", value: concurrentCalls },
     { label: "Call Recording", value: callRecording },
-    { label: "Call Center", value: isCallCenter },
+    { label: "Call Center", value: isCallCenter ? "Yes" : "No"  },
     { label: "Call Center Agents", value: callCenterAgents },
+    { label: "Automatic Call Distribution", value: isAcd ? "Yes" : "No" },
   ];
 
   return (
@@ -19,7 +20,7 @@ const AnswersTable = ({ ipLines, fxsPorts, fxoPorts, callCenterAgents, concurren
             <tr key={index} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
               <th
                 scope="row"
-                className="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                className="px-3 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white"
               >
                 {row.label}
               </th>

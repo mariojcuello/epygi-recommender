@@ -149,6 +149,14 @@ export default function Home() {
         setIsValidInput={setIsValidInput}
         skipNextQuestion={skipNextQuestion}
         setSkipNextQuestion={setSkipNextQuestion}
+        ipLines={ipLines}
+        fxsPorts={fxsPorts}
+        fxoPorts={fxoPorts}
+        concurrentCalls={concurrentCalls}
+        callRecording={callRecording}
+        isCallCenter={isCallCenter}
+        callCenterAgents={callCenterAgents}
+        isAcd={isAcd}        
       />
       <Reset 
       currentQuestionIndex={currentQuestionIndex}

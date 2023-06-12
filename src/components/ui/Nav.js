@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const Nav = ({
   currentQuestionIndex,
   setCurrentQuestionIndex,
@@ -5,6 +7,14 @@ const Nav = ({
   setIsValidInput,
   skipNextQuestion,
   setSkipNextQuestion,
+  ipLines,
+  fxsPorts,
+  fxoPorts,
+  concurrentCalls,
+  callRecording,
+  isCallCenter,
+  callCenterAgents,
+  isAcd,
 }) => {
   const totalNumberOfQuestions = 8;
 
@@ -25,7 +35,6 @@ const Nav = ({
     setCurrentQuestionIndex(currentQuestionIndex + 1);
     console.log("next question " + currentQuestionIndex);
     setIsValidInput(false);
-    console.log("isValidInput: " + isValidInput);
   };
 
   const handlePrevious = () => {
@@ -33,7 +42,6 @@ const Nav = ({
       setCurrentQuestionIndex(currentQuestionIndex - 1);
       console.log("updated question index to " + currentQuestionIndex);
       setIsValidInput(true);
-      console.log("isValidInput is now " + isValidInput);
     }
   };
 
@@ -61,13 +69,10 @@ const Nav = ({
           </button>
         )}
         {currentQuestionIndex === totalNumberOfQuestions && (
-          <button
-            type="button"
-            onClick={handleNext}
-            className="bg-blue-500 text-white rounded-lg text-xl py-2 px-4 mt-4"
-          >
-            See Results
-          </button>
+          <Link
+          href={`/results/?ipLines=${ipLines}&fxsPorts=${fxsPorts}&fxoPorts=${fxoPorts}&concurrentCalls=${concurrentCalls}&callRecording=${callRecording}&isCallCenter=${isCallCenter}&callCenterAgents=${callCenterAgents}&isAcd=${isAcd}`}
+          className="bg-blue-500 text-white rounded-lg text-xl py-2 px-4 mt-4 text-center"
+          >See Results</Link>
         )}
       </div>
     </>

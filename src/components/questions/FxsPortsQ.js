@@ -7,7 +7,6 @@ const FxsPortsQ = ({fxsPorts, setFxsPorts, setIsValidInput}) => {
 
   const checkInput = () => {
     if (fxsPorts === "0" || fxsPorts === "2") {
-      console.log("fxsports is not empty")
       setIsValidInput(true);
     }
   }
