@@ -10,7 +10,7 @@ const Intro = ({ currentQuestionIndex, setCurrentQuestionIndex, setIsValidInput 
 
   return (
     <QuestionWrapper>
-      <div className="text-center mx-auto text-2xl md:text-4xl flex font-semibold">
+      <div className="text-center mx-auto text-2xl md:text-4xl flex font-semibold text-black dark:text-white">
         Epygi PBX Advisor
       </div>
       <div className="text-center mx-auto text-lg md:text-xl mt-2 flex dark:text-gray-400 text-gray-800 ">
