@@ -20,13 +20,26 @@ export default function Home() {
   const [isValidInput, setIsValidInput] = useState(false);
 
   const [ipLines, setIpLines] = useState("");
-  const [fxsPorts, setFxsPorts] = useState("");
-  const [fxoPorts, setFxoPorts] = useState("");
+  const [fxsPorts, setFxsPorts] = useState(null);
+  const [fxoPorts, setFxoPorts] = useState(null);
   const [concurrentCalls, setConcurrentCalls] = useState("");
   const [callRecording, setCallRecording] = useState("");
   const [isCallCenter, setIsCallCenter] = useState(null);
   const [callCenterAgents, setCallCenterAgents] = useState("");
   const [isAcd, setIsAcd] = useState(null);
+
+  const resetAllQuestions = () => {
+    setCurrentQuestionIndex(0);
+    setIpLines("");
+    setFxsPorts("");
+    setFxoPorts("");
+    setConcurrentCalls("");
+    setCallRecording("");
+    setIsCallCenter(null);
+    setCallCenterAgents("");
+    setIsAcd(null);
+  }
+    
 
   const questions = [
     {
@@ -35,6 +48,7 @@ export default function Home() {
         <Intro
           currentQuestionIndex={currentQuestionIndex}
           setCurrentQuestionIndex={setCurrentQuestionIndex}
+          setIsValidInput={setIsValidInput}
         />
       ),
     },
@@ -45,6 +59,7 @@ export default function Home() {
           ipLines={ipLines}
           setIpLines={setIpLines}
           setIsValidInput={setIsValidInput}
+          currentQuestionIndex={currentQuestionIndex}
         />
       ),
     },
@@ -55,6 +70,7 @@ export default function Home() {
           fxsPorts={fxsPorts}
           setFxsPorts={setFxsPorts}
           setIsValidInput={setIsValidInput}
+          currentQuestionIndex={currentQuestionIndex}
         />
       ),
     },

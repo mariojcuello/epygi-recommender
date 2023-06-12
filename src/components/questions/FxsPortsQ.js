@@ -1,18 +1,30 @@
+import { useState, useEffect } from "react";
+
 import QuestionButton from "@/components/ui/QuestionButton";
 import QuestionText from "../ui/QuestionText";
 
-const FxsPortsQ = (props) => {
+const FxsPortsQ = ({fxsPorts, setFxsPorts, setIsValidInput}) => {
+
+  const checkInput = () => {
+    if (fxsPorts === "0" || fxsPorts === "2") {
+      console.log("fxsports is not empty")
+      setIsValidInput(true);
+    }
+  }
+
+  useEffect(() => {
+    checkInput();
+  }, [fxsPorts]);
 
   const handleZeroClick = () => {
-    props.setFxsPorts('0');
-    props.setIsValidInput(true);
+    setFxsPorts("0");
+    setIsValidInput(true);
   };
 
   const handleTwoClick = () => {
-    props.setFxsPorts('2');
-    props.setIsValidInput(true);
+    setFxsPorts("2");
+    setIsValidInput(true);
   };
-
 
   return (
     <div className="max-w-2xl mx-auto">
@@ -21,12 +33,12 @@ const FxsPortsQ = (props) => {
         <QuestionButton
           onClick={handleZeroClick}
           buttonText={"0"}
-          isSelected={props.fxsPorts === '0' ? true : null}
+          isSelected={fxsPorts === "0" ? true : null}
         />
         <QuestionButton
           onClick={handleTwoClick}
           buttonText={"2"}
-          isSelected={props.fxsPorts === '2' ? true : null}
+          isSelected={fxsPorts === "2" ? true : null}
         />
       </div>
     </div>

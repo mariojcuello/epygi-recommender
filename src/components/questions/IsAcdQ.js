@@ -1,17 +1,30 @@
+import { useEffect } from "react";
+
 import QuestionButton from "@/components/ui/QuestionButton";
 import QuestionText from "../ui/QuestionText";
 
-const IsAcdQ = (props) => {
+const IsAcdQ = ({isAcd, setIsAcd, setIsValidInput}) => {
+
+  const checkInput = () => {
+    if (isAcd === true || isAcd === false) {
+      console.log("isAcd is not empty")
+      setIsValidInput(true);
+    }
+  }
+
+  useEffect(() => {
+    checkInput();
+  }, [isAcd]);
 
   const handleYesClick = () => {
-    props.setIsAcd(true);
-    props.setIsValidInput(true);
+    setIsAcd(true);
+    setIsValidInput(true);
     console.log("yes clicked")
   };
 
   const handleNoClick = () => {
-    props.setIsAcd(false);
-    props.setIsValidInput(true);
+    setIsAcd(false);
+    setIsValidInput(true);
     console.log("no clicked")
   };
 
@@ -22,12 +35,12 @@ const IsAcdQ = (props) => {
         <QuestionButton
           onClick={handleYesClick}
           buttonText={"Yes"}
-          isSelected={props.isAcd ? true : null}
+          isSelected={isAcd ? true : null}
         />
         <QuestionButton
           onClick={handleNoClick}
           buttonText={"No"}
-          isSelected={props.isAcd === false ? true : null}
+          isSelected={isAcd === false ? true : null}
         />
       </div>
     </div>

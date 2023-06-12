@@ -1,18 +1,31 @@
+import React, { useEffect } from "react";
+
 import QuestionButton from "@/components/ui/QuestionButton";
 import QuestionText from "../ui/QuestionText";
 
-const IsCallCenterQ = (props) => {
+const IsCallCenterQ = ({isCallCenter, setIsCallCenter, setIsValidInput}) => {
+
+  const checkInput = () => {
+    if (isCallCenter === true || isCallCenter === false) {
+      console.log("fxsPorts is not empty")
+      setIsValidInput(true);
+    }
+  }
+
+  useEffect(() => {
+    checkInput();
+  }, [isCallCenter]);
 
   const handleYesClick = () => {
-    props.setIsCallCenter(true);
-    props.setIsValidInput(true);
+    setIsCallCenter(true);
+    setIsValidInput(true);
     console.log("yes clicked")
   };
 
   const handleNoClick = () => {
-    props.setSkipNextQuestion(true);
-    props.setIsCallCenter(false);
-    props.setIsValidInput(true);
+    setSkipNextQuestion(true);
+    setIsCallCenter(false);
+    setIsValidInput(true);
     console.log("no clicked")
   };
 
@@ -23,12 +36,12 @@ const IsCallCenterQ = (props) => {
         <QuestionButton
           onClick={handleYesClick}
           buttonText={"Yes"}
-          isSelected={props.isCallCenter ? true : null}
+          isSelected={isCallCenter ? true : null}
         />
         <QuestionButton
           onClick={handleNoClick}
           buttonText={"No"}
-          isSelected={props.isCallCenter === false ? true : null}
+          isSelected={isCallCenter === false ? true : null}
         />
       </div>
     </div>

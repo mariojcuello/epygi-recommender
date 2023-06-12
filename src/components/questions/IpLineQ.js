@@ -1,31 +1,37 @@
 import { useState, useEffect } from "react";
 import QuestionText from "../ui/QuestionText";
 
-const IpLinesQ = (props) => {
+const IpLinesQ = ({ipLines, setIpLines, setIsValidInput}) => {
   const [inputError, setInputError] = useState(false);
+
+  const checkInput = () => {
+    if (ipLines !== "") {
+      console.log("ipLines is not empty")
+      setIsValidInput(true);
+    }
+  }
+
+  useEffect(() => {
+    checkInput();
+  }, [ipLines]);
 
   const handleChange = (e) => {
     const inputValue = e.target.value;
     const numericValue = parseInt(inputValue);
     if (inputValue === "") {
       setInputError(true);
-      props.setIpLines("");
-      props.setIsValidInput(false);
+      setIpLines("");
+      setIsValidInput(false);
     } else if (!isNaN(numericValue)) {
       setInputError(false);
-      props.setIpLines(numericValue.toString());
-      props.setIsValidInput(true);
+      setIpLines(numericValue.toString());
+      setIsValidInput(true);
     } else {
       setInputError(true);
-      props.setIpLines("");
-      props.setIsValidInput(false);
+      setIpLines("");
+      setIsValidInput(false);
     }
   };
-
-
-  useEffect(() => {
-    console.log("IP Lines: " + props.ipLines);
-  }, [props.ipLines]);
 
   return (
    <div className="max-w-2xl mx-auto mt-12">
@@ -33,7 +39,7 @@ const IpLinesQ = (props) => {
       <input
         type="text"
         id="ipLines"
-        value={props.ipLines}
+        value={ipLines}
         onChange={handleChange}
         className={`bg-gray-50 border ${
           inputError ? "border-red-500" : "border-gray-300"

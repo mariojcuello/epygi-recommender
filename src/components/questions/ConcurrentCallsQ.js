@@ -1,36 +1,52 @@
 import { useState, useEffect } from "react";
 import QuestionText from "../ui/QuestionText";
 
-const ConcurrentCallsQ = (props) => {
+const ConcurrentCallsQ = ({concurrentCalls, setConcurrentCalls, setIsValidInput}) => {
   const [inputError, setInputError] = useState(false);
+
+  const checkInput = () => {
+    console.log("checkInput() called")
+    if (concurrentCalls !== "") {
+      console.log("concurrentCalls is not empty")
+      setIsValidInput(true);
+    }
+  }
+
+  useEffect(() => {
+    checkInput();
+  }, [concurrentCalls]);
 
   const handleChange = (e) => {
     const inputValue = e.target.value;
     const numericValue = parseInt(inputValue);
-    if (!isNaN(numericValue && inputValue !== "")) {
+    if (inputValue === "") {
+      setInputError(true);
+      setConcurrentCalls("");
+      setIsValidInput(false);
+    } else if (!isNaN(numericValue)) {
       setInputError(false);
-      props.setConcurrentCalls(numericValue.toString());
-      props.setIsValidInput(true);
+      setConcurrentCalls(numericValue.toString());
+      setIsValidInput(true);
+    } else {
+      setInputError(true);
+      setConcurrentCalls("");
+      setIsValidInput(false);
     }
-      else {
-        setInputError(true);
-        props.setConcurrentCalls("");
-        props.setIsValidInput(false);
-      }
-    };
-
+  };
 
   useEffect(() => {
-    console.log("Concurrent Calls: " + props.concurrentCalls);
-  }, [props.ipLines]);
+    console.log("Concurrent Calls: " + concurrentCalls);
+  }, [concurrentCalls]);
 
   return (
-   <div className="max-w-2xl mx-auto">
-      <QuestionText question={"How many concurrent calls do you expect to have?"}/>
+    <div className="max-w-2xl mx-auto">
+      <QuestionText
+        question={"What is the maximum number of concurrent calls you need to have?"}
+      />
       <input
         type="text"
         id="ipLines"
-        value={props.concurrentCalls}
+        value={concurrentCalls}
         onChange={handleChange}
         className={`bg-gray-50 border ${
           inputError ? "border-red-500" : "border-gray-300"

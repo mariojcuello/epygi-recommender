@@ -2,21 +2,32 @@ import { useState, useEffect } from "react";
 import QuestionButton from "@/components/ui/QuestionButton";
 import QuestionText from "../ui/QuestionText";
 
-const FxoPortsQ = (props) => {
+const FxoPortsQ = ({fxoPorts, setFxoPorts, setIsValidInput}) => {
+
+  const checkInput = () => {
+    if (fxoPorts === "0" || fxoPorts === "2" || fxoPorts === "4") {
+      console.log("fxsPorts is not empty")
+      setIsValidInput(true);
+    }
+  }
+
+  useEffect(() => {
+    checkInput();
+  }, [fxoPorts]);
 
   const handleZeroClick = () => {
-    props.setFxoPorts('0');
-    props.setIsValidInput(true);
+    setFxoPorts("0");
+    set(true);
   };
 
   const handleTwoClick = () => {
-    props.setFxoPorts('2');
-    props.setIsValidInput(true);
+    setFxoPorts("2");
+    setIsValidInput(true);
   };
 
   const handleFourClick = () => {
-    props.setFxoPorts('4');
-    props.setIsValidInput(true);
+    setFxoPorts("4");
+    setIsValidInput(true);
   };
 
   return (
@@ -26,17 +37,17 @@ const FxoPortsQ = (props) => {
         <QuestionButton
           onClick={handleZeroClick}
           buttonText={"0"}
-          isSelected={props.fxoPorts === '0' ? true : null}
+          isSelected={fxoPorts === "0" ? true : null}
         />
         <QuestionButton
           onClick={handleTwoClick}
           buttonText={"2"}
-          isSelected={props.fxoPorts === '2' ? true : null}
+          isSelected={fxoPorts === "2" ? true : null}
         />
         <QuestionButton
           onClick={handleFourClick}
           buttonText={"4"}
-          isSelected={props.fxoPorts === '4' ? true : null}
+          isSelected={fxoPorts === "4" ? true : null}
         />
       </div>
     </div>
