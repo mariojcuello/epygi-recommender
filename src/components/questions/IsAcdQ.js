@@ -31,7 +31,7 @@ const IsAcdQ = ({isAcd, setIsAcd, setIsValidInput}) => {
   return (
     <div className="max-w-2xl mx-auto">
       <QuestionText question={"Do you need automatic call distribution?"} />
-      <div className="flex flex-row gap-20 place-content-center">
+      <div className="flex flex-row gap-20 place-content-center mt-10">
         <QuestionButton
           onClick={handleYesClick}
           buttonText={"Yes"}

@@ -41,14 +41,14 @@ const CallRecordingQ = ({callRecording, setCallRecording, setIsValidInput}) => {
   return (
     <div className="max-w-2xl mx-auto">
       <QuestionText
-        question={"How many calls do you need to record at the same time?"}
+        question={"How many calls if any do you need to record at the same time?"}
       />
       <input
         type="text"
         id="ipLines"
         value={callRecording}
         onChange={handleChange}
-        className={`bg-gray-50 border ${
+        className={`bg-gray-50 border mt-10 ${
           inputError ? "border-red-500" : "border-gray-300"
         } max-w-xs text-center mx-auto text-gray-900 text-lg md:text-3xl rounded-lg text focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500`}
         placeholder="Enter an amount"

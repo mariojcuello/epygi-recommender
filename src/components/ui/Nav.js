@@ -24,6 +24,7 @@ const Nav = ({
       setSkipNextQuestion(false);
       setIsValidInput(false);
       console.log("skipped to question " + currentQuestionIndex);
+      return;
     }
 
 

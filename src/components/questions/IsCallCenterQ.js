@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 
 import QuestionButton from "@/components/ui/QuestionButton";
 import QuestionText from "../ui/QuestionText";
+import SubQuestionText from "../ui/SubQuestionText";
 
 const IsCallCenterQ = ({isCallCenter, setIsCallCenter, setIsValidInput, setSkipNextQuestion}) => {
 
@@ -31,7 +32,8 @@ const IsCallCenterQ = ({isCallCenter, setIsCallCenter, setIsValidInput, setSkipN
   return (
     <div className="max-w-2xl mx-auto">
       <QuestionText question={"Do you need call center functionality?"} />
-      <div className="flex flex-row gap-20 place-content-center">
+      <SubQuestionText subQuestion={"(Will there be call center agents and magagers that need to oversee them?)"} />
+      <div className="flex flex-row gap-20 place-content-center mt-10">
         <QuestionButton
           onClick={handleYesClick}
           buttonText={"Yes"}

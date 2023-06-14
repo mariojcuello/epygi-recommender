@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import QuestionButton from "@/components/ui/QuestionButton";
 import QuestionText from "../ui/QuestionText";
+import SubQuestionText from "../ui/SubQuestionText";
 
 const FxoPortsQ = ({fxoPorts, setFxoPorts, setIsValidInput}) => {
 
@@ -17,7 +18,7 @@ const FxoPortsQ = ({fxoPorts, setFxoPorts, setIsValidInput}) => {
 
   const handleZeroClick = () => {
     setFxoPorts("0");
-    set(true);
+    setIsValidInput(true);
   };
 
   const handleTwoClick = () => {
@@ -33,6 +34,7 @@ const FxoPortsQ = ({fxoPorts, setFxoPorts, setIsValidInput}) => {
   return (
     <div className="max-w-2xl mx-auto">
       <QuestionText question={"How many FXO ports are needed?"} />
+      <SubQuestionText subQuestion={"(FXO ports are used to connect to analog phone lines.)"} />
       <div className="flex flex-row gap-10 md:gap-20 place-content-center">
         <QuestionButton
           onClick={handleZeroClick}

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 
 import QuestionButton from "@/components/ui/QuestionButton";
 import QuestionText from "../ui/QuestionText";
+import SubQuestionText from "../ui/SubQuestionText";
 
 const FxsPortsQ = ({fxsPorts, setFxsPorts, setIsValidInput}) => {
 
@@ -28,6 +29,7 @@ const FxsPortsQ = ({fxsPorts, setFxsPorts, setIsValidInput}) => {
   return (
     <div className="max-w-2xl mx-auto">
       <QuestionText question={"How many FXS ports are needed?"} />
+      <SubQuestionText subQuestion={"(FXS ports are used to connect analog endpoints like fax machines.)"} />
       <div className="flex flex-row gap-20 place-content-center">
         <QuestionButton
           onClick={handleZeroClick}
