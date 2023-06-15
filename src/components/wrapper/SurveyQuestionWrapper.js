@@ -1,6 +1,6 @@
 const SurveyQuestionWrapper = (props) => {
     return(
-        <div class="relative z-0 w-full mb-6 group">{props.children}</div>
+        <div className="relative z-0 w-full mb-6 group">{props.children}</div>
     )
 }
 
