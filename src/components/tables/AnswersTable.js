@@ -77,20 +77,20 @@ const AnswersTable = ({ ipLines, fxsPorts, fxoPorts, callCenterAgents, concurren
     { label: "FXO Ports", userPBX: fxoPorts, default: defaultValues[pbxModel].fxoPorts },
     { label: "Default Concurrent Calls", userPBX: "-", default: defaultValues[pbxModel].concurrentCalls },
     { label: "Max Concurrent Calls", userPBX: concurrentCalls, default: defaultValues[pbxModel].concurrentCalls },
-    { label: "Max Concurrent Call Recording", userPBX: callRecording, default: defaultValues[pbxModel].callRecording },
+    { label: "Max Call Recording", userPBX: callRecording, default: defaultValues[pbxModel].callRecording },
     { label: "Call Center", userPBX: isCallCenter ? "Yes" : "No", default: defaultValues[pbxModel].isCallCenter },
     { label: "Call Center Agents", userPBX: callCenterAgents, default: defaultValues[pbxModel].callCenterAgents },
-    { label: "Automatic Call Distribution", userPBX: isAcd ? "Yes" : "No", default: defaultValues[pbxModel].isAcd },
+    { label: "Auto Call Distribution", userPBX: isAcd ? "Yes" : "No", default: defaultValues[pbxModel].isAcd },
   ];
 
   return (
-    <div className="w-full overflow-x-auto shadow-md sm:rounded-lg mx-10 my-10">
-      <table className="w-full text-sm  text-gray-500 dark:text-gray-400 ">
+    <div className="w-full overflow-x-auto shadow-lg border dark:border-none sm:rounded-lg mx-10 my-10">
+      <table className="w-full text-xs md:text-sm  text-gray-500 dark:text-gray-400 ">
         <thead>
-          <tr className="text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-            <th className="px-5 py-3 font-medium text-left text-gray-900 whitespace-nowrap dark:text-white">Feature</th>
-            <th className="px-5 py-3 text-lg font-medium text-center text-gray-900 whitespace-nowrap dark:text-white">{pbxModel}</th>
-            <th className="px-5 py-3 font-medium text-center text-gray-900 whitespace-nowrap dark:text-white">Your project</th>
+          <tr className="text-gray-700 bg-gray-50 dark:bg-gray-700 dark:text-gray-400 font-semi-bold border-b-2">
+            <th className="px-1 md:px-5 md:py-3  text-left text-gray-900 whitespace-nowrap dark:text-white">Feature</th>
+            <th className="px-1 md:px-5 md:py-3 text-lg text-center text-gray-900 whitespace-nowrap dark:text-white">{pbxModel}</th>
+            <th className="px-1 md:px-5 md:py-3  text-center text-gray-900 whitespace dark:text-white">Your Requirements</th>
           </tr>
         </thead>
         <tbody>
@@ -98,7 +98,7 @@ const AnswersTable = ({ ipLines, fxsPorts, fxoPorts, callCenterAgents, concurren
             <tr key={index} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 font-semibold">
               <th
                 scope="row"
-                className="px-5 py-2 font-md text-left text-gray-900 whitespace-nowrap dark:text-white text-md"
+                className="px-5 py-2 font-md text-left text-gray-800 whitespace-nowrap dark:text-white text-md"
               >
                 {row.label}
               </th>

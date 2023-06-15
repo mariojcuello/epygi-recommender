@@ -7,9 +7,9 @@ function calculatePBX(
 ) {
   let pbxModel = "";
 
-  if (fxoPorts == 4) {
+  if (fxoPorts == 4 && ipLines <= 200) {
     pbxModel = "QX200";
-  } else if (fxoPorts == 2 || fxsPorts == 2) {
+  } else if ((fxoPorts == 2 || fxsPorts == 2) && ipLines <= 200) {
     if (ipLines > 48 || concurrentCalls > 16 || callRecording > 12) {
       pbxModel = "QX200";
     } else {
