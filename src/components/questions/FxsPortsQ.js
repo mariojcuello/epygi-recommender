@@ -29,7 +29,7 @@ const FxsPortsQ = ({fxsPorts, setFxsPorts, setIsValidInput}) => {
   return (
     <div className="max-w-2xl mx-auto">
       <QuestionText question={"How many FXS ports are needed?"} />
-      <SubQuestionText subQuestion={"(FXS ports are used to connect analog endpoints like fax machines.)"} />
+      <SubQuestionText subQuestion={"(If you need more than 2 FXS ports a QX gateway can be used to increase that number..)"} />
       <div className="flex flex-row gap-20 place-content-center">
         <QuestionButton
           onClick={handleZeroClick}

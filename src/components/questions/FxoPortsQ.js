@@ -34,7 +34,7 @@ const FxoPortsQ = ({fxoPorts, setFxoPorts, setIsValidInput}) => {
   return (
     <div className="max-w-2xl mx-auto">
       <QuestionText question={"How many FXO ports are needed?"} />
-      <SubQuestionText subQuestion={"(FXO ports are used to connect to analog phone lines.)"} />
+      <SubQuestionText subQuestion={"(If you need more than 4 FXO ports a QX gateway can be used to increase that number.)"} />
       <div className="flex flex-row gap-10 md:gap-20 place-content-center">
         <QuestionButton
           onClick={handleZeroClick}
