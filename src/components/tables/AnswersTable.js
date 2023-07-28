@@ -16,8 +16,8 @@ const AnswersTable = ({ ipLines, fxsPorts, fxoPorts, callCenterAgents, concurren
     QX50: {
       ipLines: { value: 16, unit: "" },
       maxIpLines: { value: 48, unit: "" },
-      fxsPorts: { value: 0, unit: "" },
-      fxoPorts: { value: 0, unit: "" },
+      fxsPorts: { value: 2, unit: "" },
+      fxoPorts: { value: 2, unit: "" },
       concurrentCalls: { value: 16, unit: "" },
       callRecording: { value: 12, unit: "" },
       isCallCenter: { value: "Yes", unit: "" },
@@ -49,8 +49,8 @@ const AnswersTable = ({ ipLines, fxsPorts, fxoPorts, callCenterAgents, concurren
     QX200: {
       ipLines: { value: 24, unit: "" },
       maxIpLines: { value: 200, unit: "" },
-      fxsPorts: { value: 0, unit: "" },
-      fxoPorts: { value: 0, unit: "" },
+      fxsPorts: { value: 2, unit: "" },
+      fxoPorts: { value: 4, unit: "" },
       concurrentCalls: { value: 64, unit: "" },
       callRecording: { value: 32, unit: "" },
       isCallCenter: { value: "-", unit: "" },
@@ -80,7 +80,6 @@ const AnswersTable = ({ ipLines, fxsPorts, fxoPorts, callCenterAgents, concurren
     { label: "Max Call Recording", userPBX: callRecording, default: defaultValues[pbxModel].callRecording },
     { label: "Call Center", userPBX: isCallCenter ? "Yes" : "No", default: defaultValues[pbxModel].isCallCenter },
     { label: "Call Center Agents", userPBX: callCenterAgents, default: defaultValues[pbxModel].callCenterAgents },
-    { label: "Auto Call Distribution", userPBX: isAcd ? "Yes" : "No", default: defaultValues[pbxModel].isAcd },
   ];
 
   return (

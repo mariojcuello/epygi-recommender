@@ -4,6 +4,7 @@ function calculatePBX(
   fxoPorts,
   concurrentCalls,
   callRecording,
+  isCallCenter,
 ) {
   let pbxModel = "";
 
@@ -24,6 +25,9 @@ function calculatePBX(
       pbxModel = "QX60";
     } else if (ipLines <= 16 || concurrentCalls <= 6 ) {
       pbxModel = "QX20";
+      if (isCallCenter == true) {
+        pbxModel = "QX60";
+      }
     }
   }
 

@@ -9,14 +9,17 @@ const Results = () => {
   const router = useRouter();
   const { query } = router;
 
+  // Parse integer values from the URL query parameters
   const ipLines = parseInt(query.ipLines) || 0;
   const fxsPorts = parseInt(query.fxsPorts) || 0;
   const fxoPorts = parseInt(query.fxoPorts) || 0;
   const concurrentCalls = parseInt(query.concurrentCalls) || 0;
   const callRecording = parseInt(query.callRecording) || 0;
-  const isCallCenter = query.isCallCenter || "";
+  
+  // Parse boolean values from the URL query parameters
+  const isCallCenter = query.isCallCenter === "true" || false;
   const callCenterAgents = parseInt(query.callCenterAgents) || 0;
-  const isAcd = query.isAcd || "";
+  const isAcd = query.isAcd === "true" || false;
 
   const pbxModel = calculatePBX(
     ipLines,
