@@ -4,6 +4,7 @@ import Header from "@/components/ui/Header";
 import { useRouter } from "next/router";
 import calculatePBX from "@/utils/calculatePBX";
 import Link from "next/link";
+import Contact from "@/components/ui/Contact";
 
 const Results = () => {
   const router = useRouter();
@@ -134,6 +135,7 @@ const Results = () => {
           className=" mr-20 lg:flex hidden"
         />
       </div>
+      <Contact> </Contact>
     </>
   );
 };

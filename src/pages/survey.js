@@ -60,7 +60,10 @@ const Survey = () => {
   return (
     <>
       <Header></Header>
-      <div className="max-w-lg mx-auto mt-10">
+      <div className="max-w-lg mx-auto mt-10 px-10">
+        <div className="mb-5 text-gray-300">
+          Please enter the specifications of the system you are looking to procure:
+        </div>
         <SurveyQuestionBlockWrapper>
           <SurveyQuestionWrapper>
             <input

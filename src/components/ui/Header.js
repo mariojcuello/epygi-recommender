@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const Header = () => {
   return (
-    <div className=" max-w-6xl mx-auto items-center my-10">
+    <div className=" max-w-6xl my-10 mx-20 md:mx-15">
       <Link href={"/"}>
         {" "}
         <img
