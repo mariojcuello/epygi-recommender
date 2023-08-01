@@ -69,7 +69,7 @@ const Results = () => {
           {pbxModel}
         </div>
         <div className=" mx-auto my-5 md:my-0 justify-center items-center">
-          <div class="inline-flex rounded-md shadow-sm" role="group">
+          <div className="inline-flex rounded-md shadow-sm" role="group">
             <Link
               type="button"
               href={"/datasheets/" + pbxModel + "-datasheet.pdf"}
@@ -96,13 +96,13 @@ const Results = () => {
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
-            stroke-width="1.5"
+            strokeWidth="1.5"
             stroke="currentColor"
             className="w-4 h-4 mt-1 ml-2"
           >
             <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
               d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99"
             />
           </svg>
@@ -110,10 +110,10 @@ const Results = () => {
       </div>
       {needsGateway && (
         <div
-          class="p-4 mb-4 text-sm text-yellow-800 rounded-lg bg-yellow-50 dark:bg-gray-800 dark:text-yellow-300 max-w-5xl mx-auto text-center"
+          className="p-4 mb-4 text-sm text-yellow-800 rounded-lg bg-yellow-50 dark:bg-gray-800 dark:text-yellow-300 max-w-5xl mx-auto text-center"
           role="alert"
         >
-          <span class="font-medium ">Warning!</span> If you need more than 200 IP Lines and also need to use FXS or FXO ports, you will need to supplement your solution with a QX Gateway. 
+          <span className="font-medium ">Warning!</span> If you need more than 200 IP Lines and also need to use FXS or FXO ports, you will need to supplement your solution with a QX Gateway. 
         </div>
       )}
 

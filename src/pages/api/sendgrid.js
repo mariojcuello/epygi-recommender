@@ -11,7 +11,7 @@ async function sendEmail(req, res) {
     ]
 
     await sendgrid.send({
-      to: recipients, 
+      to: 'mariojcuello@gmail.com', 
       bcc: 'mj.cuello@epygi.com',
       from: 'mj.cuello@epygi.com', 
       subject: 'Epygi Project Inquiry', //subject: `${req.body.subject}`,
@@ -366,10 +366,7 @@ async function sendEmail(req, res) {
                   <table role="presentation" border="0" cellpadding="0" cellspacing="0">
                     <tr>
                       <td>
-                        <p>Hi ${req.body.fullname},</p>
-                        <p>Thank you for sending the following message to me!</p>
-                        <p>"${req.body.message}"</p>
-                        <p>I will be sure to reach out to you at ${req.body.email}</p>
+                        
                         <p>Have a great day!<br />Mario Cuello</p>
                       </td>
                     </tr>
