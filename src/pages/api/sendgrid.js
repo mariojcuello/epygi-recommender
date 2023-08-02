@@ -366,6 +366,8 @@ async function sendEmail(req, res) {
                   <table role="presentation" border="0" cellpadding="0" cellspacing="0">
                     <tr>
                       <td>
+                        <img src="https://www.epygi.com/wp-content/uploads/2019/08/epygiLogo_W214.png">
+                        <br />
                         <p>Thank you for using our PBX configuration tool!</p>
                         <p>We have received your request and will get back to you as soon as possible.</p>
                         <br />

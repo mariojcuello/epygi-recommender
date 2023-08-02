@@ -134,7 +134,7 @@ const Results = () => {
         <img
           src={`/img/${pbxModel}.png`}
           alt={pbxModel}
-          className=" mr-20 lg:flex hidden"
+          className=" mr-20 lg:flex hidden max-w-[300px]"
         />
       </div>
       <Contact
