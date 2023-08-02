@@ -1,7 +1,27 @@
-import { useState, handleSubmit } from "react";
+import { useState, useEffect, handleSubmit } from "react";
 
-const Contact = () => {
+const Contact = ({
+  ipLines,
+  fxsPorts,
+  fxoPorts,
+  callCenterAgents,
+  concurrentCalls,
+  isAcd,
+  isCallCenter,
+  callRecording,
+  pbxModel,
+}) => {
   {
+    const [isCallCenterEmail, setIsCallCenterEmail] = useState("");
+
+    useEffect(() => {
+      if (isCallCenter) {
+        setIsCallCenterEmail("Yes");
+      } else {
+        setIsCallCenterEmail("No");
+      }
+    }, [isCallCenter]);
+
     //const [fullname, setFullname] = useState("");
     const [email, setEmail] = useState("");
 
@@ -19,7 +39,6 @@ const Contact = () => {
       let tempErrors = {};
       let isValid = true;
 
-      
       if (email.length <= 0) {
         tempErrors["email"] = true;
         isValid = false;
@@ -40,6 +59,15 @@ const Contact = () => {
         const res = await fetch("/api/sendgrid", {
           body: JSON.stringify({
             email: email,
+            ipLines: ipLines,
+            fxsPorts: fxsPorts,
+            fxoPorts: fxoPorts,
+            concurrentCalls: concurrentCalls,
+            callRecording: callRecording,
+            isCallCenter: isCallCenterEmail,
+            callCenterAgents: callCenterAgents,
+            isAcd: isAcd,
+            pbxModel: pbxModel,
           }),
           headers: {
             "Content-Type": "application/json",
@@ -60,6 +88,8 @@ const Contact = () => {
         setButtonText("Send");
       }
       console.log(email);
+      console.log(ipLines);
+      console.log(isCallCenter);
     };
 
     return (
@@ -69,13 +99,13 @@ const Contact = () => {
             Contact Us
           </h2> */}
           <p className=" font-light text-center text-gray-500 dark:text-gray-300 text-xl mx-auto mb-10">
-            Please enter your email to send us a request for the configuration you have created.
+            Please enter your email to send us a request for the configuration
+            you have created.
           </p>
         </div>
 
         <form onSubmit={handleSubmit} className="mx-auto flex">
           <div className="w-[300px]">
-            
             <input
               type="email"
               id="email"
@@ -98,7 +128,7 @@ const Contact = () => {
             </button>
             {showSuccessMessage && (
               <div className="text-xl ml-5 animate-bounce">
-                Thank you for your message!
+                Inquiry received!
               </div>
             )}
             {showFailureMessage && (

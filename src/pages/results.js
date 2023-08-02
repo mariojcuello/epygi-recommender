@@ -16,7 +16,7 @@ const Results = () => {
   const fxoPorts = parseInt(query.fxoPorts) || 0;
   const concurrentCalls = parseInt(query.concurrentCalls) || 0;
   const callRecording = parseInt(query.callRecording) || 0;
-  
+
   // Parse boolean values from the URL query parameters
   const isCallCenter = query.isCallCenter === "true" || false;
   const callCenterAgents = parseInt(query.callCenterAgents) || 0;
@@ -113,7 +113,9 @@ const Results = () => {
           className="p-4 mb-4 text-sm text-yellow-800 rounded-lg bg-yellow-50 dark:bg-gray-800 dark:text-yellow-300 max-w-5xl mx-auto text-center"
           role="alert"
         >
-          <span className="font-medium ">Warning!</span> If you need more than 200 IP Lines and also need to use FXS or FXO ports, you will need to supplement your solution with a QX Gateway. 
+          <span className="font-medium ">Warning!</span> If you need more than
+          200 IP Lines and also need to use FXS or FXO ports, you will need to
+          supplement your solution with a QX Gateway.
         </div>
       )}
 
@@ -135,7 +137,19 @@ const Results = () => {
           className=" mr-20 lg:flex hidden"
         />
       </div>
-      <Contact> </Contact>
+      <Contact
+        ipLines={ipLines}
+        fxsPorts={fxsPorts}
+        fxoPorts={fxoPorts}
+        concurrentCalls={concurrentCalls}
+        callRecording={callRecording}
+        isCallCenter={isCallCenter}
+        callCenterAgents={callCenterAgents}
+        isAcd={isAcd}
+        pbxModel={pbxModel}
+      >
+        {" "}
+      </Contact>
     </>
   );
 };

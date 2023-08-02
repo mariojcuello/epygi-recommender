@@ -11,10 +11,10 @@ async function sendEmail(req, res) {
     ]
 
     await sendgrid.send({
-      to: 'mariojcuello@gmail.com', 
+      to: recipients, 
       bcc: 'mj.cuello@epygi.com',
-      from: 'mj.cuello@epygi.com', 
-      subject: 'Epygi Project Inquiry', //subject: `${req.body.subject}`,
+      from: 'Epygi <mj.cuello@epygi.com>', 
+      subject: 'Epygi Project Inquiry',
       html: `
       <html>
   <head>
@@ -135,7 +135,7 @@ async function sendEmail(req, res) {
       }
 
       h1 {
-        font-size: 35px;
+        font-size: 18px;
         font-weight: 300;
         text-align: center;
         text-transform: capitalize; 
@@ -366,8 +366,17 @@ async function sendEmail(req, res) {
                   <table role="presentation" border="0" cellpadding="0" cellspacing="0">
                     <tr>
                       <td>
-                        
-                        <p>Have a great day!<br />Mario Cuello</p>
+                        <p>Thank you for using our PBX configuration tool!</p>
+                        <p>We have received your request and will get back to you as soon as possible.</p>
+                        <br />
+                        <h1>Recommended PBX Model: ${req.body.pbxModel}</h1>
+                        <p>Number of IP Lines: ${req.body.ipLines}</p>
+                        <p>FXS Ports: ${req.body.fxsPorts} </p>
+                        <p>FXO Ports: ${req.body.fxoPorts} </p>
+                        <p>Number of Concurrent Calls: ${req.body.concurrentCalls} </p>
+                        <p>Call Recording: ${req.body.callRecording} </p>
+                        <br />
+                        <p>Thank you!<br />Epygi</p>
                       </td>
                     </tr>
                   </table>
