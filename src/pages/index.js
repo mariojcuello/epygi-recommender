@@ -13,6 +13,7 @@ import IsAcdQ from "@/components/questions/IsAcdQ";
 import Nav from "@/components/ui/Nav";
 import { useState } from "react";
 import Reset from "@/components/ui/Reset";
+import Footer from "@/components/ui/Footer";
 
 export default function Home() {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -139,9 +140,12 @@ export default function Home() {
   ];
 
   return (
-    <>
+    <div className="flex flex-col min-h-screen">
       <Header />
-      {questions[currentQuestionIndex].component}
+      
+      {questions[currentQuestionIndex].component} 
+      
+      
       <Nav
         currentQuestionIndex={currentQuestionIndex}
         setCurrentQuestionIndex={setCurrentQuestionIndex}
@@ -169,7 +173,9 @@ export default function Home() {
       setFxsPorts={setFxsPorts}
       setIsAcd={setIsAcd}
       setIsCallCenter={setIsCallCenter}
-      />
-    </>
+      /><div className="flex-grow">
+      </div>
+      <Footer></Footer>
+    </div>
   );
 }

@@ -5,6 +5,7 @@ import { useRouter } from "next/router";
 import calculatePBX from "@/utils/calculatePBX";
 import Link from "next/link";
 import Contact from "@/components/ui/Contact";
+import Footer from "@/components/ui/Footer";
 
 const Results = () => {
   const router = useRouter();
@@ -62,13 +63,16 @@ const Results = () => {
   };
 
   return (
-    <>
+    <div>
       <Header></Header>
-      <div className="flex max-w-6xl mx-auto mb-10 items-center ">
-        <div className="text-5xl font-bold ml-10 text-gray-800 dark:text-gray-200">
-          {pbxModel}
+      <div className="flex max-w-6xl mb-10 mx-auto items-center">
+        <div className="flex-grow">
+          <div className="text-5xl font-bold ml-10 text-gray-800 dark:text-gray-200">
+            {pbxModel}
+          </div>
         </div>
-        <div className=" mx-auto my-5 md:my-0 justify-center items-center">
+
+        <div className="md:flex-grow mr-35">
           <div className="inline-flex rounded-md shadow-sm" role="group">
             <Link
               type="button"
@@ -80,7 +84,7 @@ const Results = () => {
             <Link
               type="button"
               href={pbxLink(pbxModel)}
-              className="px-2 py-2 md:px-4 md:py-2 text-xs sm:text-sm font-medium text-gray-900 bg-white border-t border rounded-r-lg border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white"
+              className="mr-10 md:mr-0 px-2 py-2 md:px-4 md:py-2 text-xs sm:text-sm font-medium text-gray-900 bg-white border-t border rounded-r-lg border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white"
             >
               Website Link
             </Link>
@@ -89,7 +93,7 @@ const Results = () => {
         <Link
           href={"/"}
           onClick={""}
-          className="px-2 py-2 md:px-4 md:py-2 text-xs sm:text-sm font-medium hidden md:flex text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white"
+          className=" mr-10 px-2 py-2 md:px-4 md:py-2 text-xs sm:text-sm font-medium hidden md:flex text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white"
         >
           Start Over
           <svg
@@ -150,7 +154,9 @@ const Results = () => {
       >
         {" "}
       </Contact>
-    </>
+      <div className="flex-grow"></div>
+      <Footer></Footer>
+    </div>
   );
 };
 

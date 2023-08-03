@@ -3,6 +3,7 @@ import { useState } from "react";
 import Link from "next/link";
 import SurveyQuestionBlockWrapper from "@/components/wrapper/SurveyQuestionBlockWrapper";
 import SurveyQuestionWrapper from "@/components/wrapper/SurveyQuestionWrapper";
+import Footer from "@/components/ui/Footer";
 
 const Survey = () => {
   const [ipLines, setIpLines] = useState("");
@@ -58,7 +59,7 @@ const Survey = () => {
   };
 
   return (
-    <>
+    <div className="flex flex-col min-h-screen">
       <Header></Header>
       <div className="max-w-lg mx-auto mt-10 px-10">
         <div className="mb-5 text-gray-300">
@@ -230,7 +231,10 @@ const Survey = () => {
           </Link>
         </div>
       </div>
-    </>
+      <div className="flex-grow">
+      </div>
+      <Footer></Footer>
+    </div>
   );
 };
 
